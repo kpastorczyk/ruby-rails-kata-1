@@ -1,3 +1,3 @@
 class Magazine < ApplicationRecord
-  include ItemQueries
+  extend ItemQueries
 end

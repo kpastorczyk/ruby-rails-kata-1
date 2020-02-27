@@ -1,3 +1,3 @@
 class Book < ApplicationRecord
-  include ItemQueries
+  extend ItemQueries
 end
