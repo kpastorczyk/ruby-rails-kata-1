@@ -1,0 +1,11 @@
+table
+  thead
+    tr Tytuł
+    tr ISBN
+    tr authors
+  tbody
+    - @items.each do |item|
+      tr
+        td= item.title
+        td= item.isbn
+        td= item.authors
