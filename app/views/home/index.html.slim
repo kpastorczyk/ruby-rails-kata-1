@@ -1,8 +1,12 @@
+= form_tag(root_path, method: :post) do
+  = text_field_tag :isbn, nil, placeholder: 'isbn'
+  = button_tag "Find", type: 'submit'
+
 table
   thead
-    tr Tytuł
+    tr Title
     tr ISBN
-    tr authors
+    tr Authors
   tbody
     - @items.each do |item|
       tr
