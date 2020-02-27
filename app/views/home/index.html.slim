@@ -4,12 +4,16 @@
 
 table
   thead
+    tr Lp.
     tr Title
+    tr Description
     tr ISBN
     tr Authors
   tbody
-    - @items.each do |item|
+    - @items.each_with_index do |item, index|
       tr
+        td= index+1
         td= item.title
+        td= (item.has_attribute?(:description) ? item.description : '-')
         td= item.isbn
         td= item.authors
