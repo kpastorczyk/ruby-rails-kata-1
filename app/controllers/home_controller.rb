@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def search
-    @items ||= find_by(params['isbn'])
+    @items ||= find_by(params['isbn'], params['author'])
     render 'index'
   end
 
@@ -15,7 +15,7 @@ class HomeController < ApplicationController
     @items ||= Book.all + Magazine.all
   end
 
-  def find_by(isbn)
-    Book.where("isbn LIKE '%#{isbn}%'") + Magazine.where("isbn LIKE '%#{isbn}%'")
+  def find_by(isbn, author)
+    %w(Book Magazine).map{|model| model.constantize.find_by(isbn, author) }
   end
 end

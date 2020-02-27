@@ -1,5 +1,6 @@
 = form_tag(root_path, method: :post) do
   = text_field_tag :isbn, nil, placeholder: 'isbn'
+  = text_field_tag :author, nil, placeholder: 'author'
   = button_tag "Find", type: 'submit'
 
 table
