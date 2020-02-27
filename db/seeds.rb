@@ -10,6 +10,7 @@ class SeedsRunner
   def run
     Seeds::ImportAuthors.new.call
     Seeds::ImportBooks.new.call
+    Seeds::ImportMagazines.new.call
   end
 end
 
